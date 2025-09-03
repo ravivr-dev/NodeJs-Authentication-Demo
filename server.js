@@ -23,6 +23,12 @@ app.use("/api/admin", adminRoutes);
 
 app.use("/api/image", uploadImageRoutes);
 
+app.use("/", (req, res) => {
+  res.status(200).json({
+    message: "Welcome to the Authentication Route!",
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is now running on PORT ${PORT}`);
 });
